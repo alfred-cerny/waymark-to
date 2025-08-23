@@ -1,0 +1,29 @@
+{block content}
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="card shadow-sm border-0 rounded-3">
+                    <div class="card-body p-4">
+                        <h2 class="text-center mb-4 fw-bold">Shorten Your Link</h2>
+
+                        {form shortenForm}
+                            <div class="input-group input-group-lg mb-3">
+                                {input url class => "form-control rounded-start-pill", placeholder => "Paste your long URL here..."}
+                            {input shorten class => "btn btn-primary rounded-end-pill px-4"}
+                            </div>
+                        {/form}
+
+                        <div n:if="$shortUrl" class="alert alert-success mt-3 d-flex align-items-center">
+                            <i class="bi bi-check-circle-fill me-2"></i>
+                            <a href="{$shortUrl}" target="_blank" class="fw-bold">{$shortUrl}</a>
+                            <button class="btn btn-sm btn-outline-secondary ms-auto"
+                                    onclick="navigator.clipboard.writeText('{$shortUrl}')">
+                                Copy
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{/block}
