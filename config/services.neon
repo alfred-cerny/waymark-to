@@ -1,5 +1,5 @@
 services:
-	- App\Core\RouterFactory::createRouter
+	- WaymarkTo\Core\RouterFactory::createRouter
 
 
 search:

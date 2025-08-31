@@ -3,7 +3,7 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
-$bootstrap = new App\Bootstrap();
+$bootstrap = new WaymarkTo\Bootstrap();
 $container = $bootstrap->bootWebApplication();
 
 exit($container->getByType(Contributte\Console\Application::class)->run());

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\UI\Accessory;
+namespace WaymarkTo\UI\Accessory;
 
 use Latte\Extension;
 

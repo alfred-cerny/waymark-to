@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\UI\Error\Error5xx;
+namespace WaymarkTo\UI\Error\Error5xx;
 
 use Nette;
 use Nette\Application\Attributes\Requires;

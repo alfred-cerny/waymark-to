@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace App;
+namespace WaymarkTo;
 
+use Dotenv\Dotenv;
 use Nette;
 use Nette\Bootstrap\Configurator;
-use Dotenv\Dotenv;
 
 
 class Bootstrap {
@@ -43,9 +43,7 @@ class Bootstrap {
 		//$this->configurator->setDebugMode('secret@23.75.345.200'); // enable for your remote IP
 		$this->configurator->enableTracy($this->rootDir . '/log');
 
-		$this->configurator->createRobotLoader()
-			->addDirectory(__DIR__)
-			->register();
+		
 		$this->configurator->setDebugMode(true);
 	}
 
@@ -53,11 +51,11 @@ class Bootstrap {
 	private function setupContainer(): void {
 		$this->configurator->addStaticParameters([
 			'db' => [
-				'host' => $_ENV['DB_HOST'] ?? 'localhost',
-				'port' => $_ENV['DB_PORT'] ?? '3306',
-				'name' => $_ENV['DB_NAME'] ?? 'app_db',
-				'user' => $_ENV['DB_USER'] ?? 'root',
-				'pass' => $_ENV['DB_PASS'] ?? '',
+				'host' => getenv('DB_HOST') ?: 'localhost',
+				'port' => getenv('DB_PORT') ?: '3306',
+				'name' => getenv('DB_NAME') ?: 'app_db',
+				'user' => getenv('DB_USER') ?: 'root',
+				'pass' => getenv('DB_PASS') ?: '',
 			]
 		]);
 

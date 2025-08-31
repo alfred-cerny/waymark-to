@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Core;
+namespace WaymarkTo\Core;
 
 use Nette;
 use Nette\Application\Routers\RouteList;
