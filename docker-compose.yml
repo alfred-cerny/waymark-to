@@ -1,6 +1,7 @@
 services:
   php:
-    image: composer:2.8.4
+    build:
+      context: ./php
     restart: unless-stopped
     env_file: .env
     volumes:
@@ -13,7 +14,8 @@ services:
       postgres:
         condition: service_healthy
   migrations:
-    image: composer:2.8.4
+    build:
+      context: ./php
     env_file: .env
     volumes:
       - ./:/www

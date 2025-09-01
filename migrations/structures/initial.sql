@@ -2,7 +2,7 @@ CREATE TABLE IF NOT EXISTS signpost
 (
     id           CHAR(26) PRIMARY KEY,        -- ULID is 26 characters
     short_code   VARCHAR(10) NOT NULL UNIQUE, -- The short identifier in the URL
-    original_url TEXT        NOT NULL,        -- The original long URL
+    original_url TEXT        NOT NULL UNIQUE, -- The original long URL
     is_active    BOOLEAN   DEFAULT TRUE,      -- Whether the link is active
     expires_at   TIMESTAMP   NULL,            -- Optional expiration date
     created_at   TIMESTAMP DEFAULT CURRENT_TIMESTAMP,

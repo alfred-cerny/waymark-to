@@ -9,5 +9,5 @@ use Nette;
 
 final class ShortenForm extends Nette\Application\UI\Form {
 	public string $shortUrl;
-
+	
 }

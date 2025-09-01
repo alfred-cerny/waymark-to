@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0fde385b0465665432f1d7aef435eaab",
+    "content-hash": "951d7f69ee3bf6f7df92611aa2602718",
     "packages": [
         {
             "name": "contributte/console",
@@ -1562,6 +1562,52 @@
                 "source": "https://github.com/nextras/migrations/tree/v3.4.0"
             },
             "time": "2025-02-06T22:04:34+00:00"
+        },
+        {
+            "name": "not-empty/ulid-php-lib",
+            "version": "7.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/not-empty/ulid-php-lib.git",
+                "reference": "41834bad1d793892a6b3f48dabba2084bab31c65"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/not-empty/ulid-php-lib/zipball/41834bad1d793892a6b3f48dabba2084bab31c65",
+                "reference": "41834bad1d793892a6b3f48dabba2084bab31c65",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.3"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.6",
+                "phpmd/phpmd": "^2.14",
+                "phpunit/phpunit": "^9.6",
+                "squizlabs/php_codesniffer": "^3.7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Ulid\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-only"
+            ],
+            "authors": [
+                {
+                    "name": "Not Empty Foundation",
+                    "email": "dev@not-empty.com"
+                }
+            ],
+            "description": "PHP Universally Unique Lexicographically Sortable Identifier (ULID)",
+            "support": {
+                "issues": "https://github.com/not-empty/ulid-php-lib/issues",
+                "source": "https://github.com/not-empty/ulid-php-lib/tree/7.0.0"
+            },
+            "time": "2023-11-26T22:18:25+00:00"
         },
         {
             "name": "phpoption/phpoption",
