@@ -42,11 +42,17 @@ final class HomePresenter extends Nette\Application\UI\Presenter {
 
 	public function shortenFormSucceeded($form, $values): void {
 		$url = $values['url'];
-		$expiration = $values['expiration'];
-		$signpost = null;
+		$expiration = $values['expiration'] ?? throw new \InvalidArgumentException('Expiration is required at the moment.');
 
 		if ($alias = $values['alias']) {
-			$signpost = $this->signpostRepository->findByShortCode($alias);
+			$signpost = $this->signpostRepository->findOne([
+				'OR' => [
+					'original_url' => $url,
+					'short_code' => $alias,
+				]
+			]);
+		} else {
+			$signpost = $this->signpostRepository->findOne(['original_url' => $url]);
 		}
 
 		if (is_null($signpost)) {

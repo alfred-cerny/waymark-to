@@ -1,0 +1,160 @@
+:root {
+    --waymark-primary: #34495e; /* Dark Blue-Gray for primary text */
+    --waymark-secondary: #7f8c8d; /* Muted Gray for borders/subtle elements */
+    --waymark-success: #27ae60; /* Emerald Green */
+    --waymark-danger: #e74c3c; /* Alizarin Red */
+    --waymark-warning: #f39c12; /* Orange */
+    --waymark-info: #3498db; /* Peter River Blue */
+    --waymark-light: #ecf0f1; /* Cloud White for backgrounds */
+    --waymark-dark: #2c3e50; /* Wet Asphalt for dark text/elements */
+}
+
+/* Toast Container for bottom-right placement */
+.toast-container {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 1rem; /* Adjust padding as needed */
+    z-index: 1080; /* Ensure it's above other elements like navbars, modals */
+    display: flex; /* To stack toasts vertically */
+    flex-direction: column; /* Stack them from bottom up */
+    gap: 0.5rem; /* Space between toasts */
+}
+
+/* Base styling for flash messages (now using the .flash class) */
+.flash {
+    background-color: var(--waymark-light);
+    border: 1px solid var(--waymark-secondary);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    border-radius: 0.25rem; /* Standard radius */
+    font-family: 'Inter', sans-serif; /* A clean, modern sans-serif font is recommended for "Waymark" */
+    min-width: 250px; /* Ensure toasts are not too narrow */
+    opacity: 1; /* Start visible */
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out; /* For fade-out and slight move */
+    transform: translateY(0);
+}
+
+/* Class for hiding (fade-out) */
+.flash.hide {
+    opacity: 0;
+    transform: translateY(10px); /* Slight downward movement during fade */
+}
+
+.toast-header {
+    background-color: var(--waymark-light);
+    color: var(--waymark-dark);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 0.5rem 0.75rem;
+    font-weight: 600;
+    display: flex; /* For aligning title, time, and close button */
+    align-items: center;
+}
+
+.toast-header strong {
+    text-transform: capitalize; /* Ensures the flash type is capitalized */
+    margin-right: auto; /* Pushes the next elements to the right */
+}
+
+.toast-header small {
+    font-size: 0.8em;
+    color: var(--waymark-secondary);
+    margin-left: 0.5rem;
+}
+
+.toast-body {
+    color: var(--waymark-primary);
+    padding: 0.75rem;
+}
+
+/* Custom Close Button */
+.toast-close-btn {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    line-height: 1;
+    color: var(--waymark-dark);
+    cursor: pointer;
+    padding: 0 0.5rem;
+    margin-left: 0.75rem; /* Space from time */
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+}
+
+.toast-close-btn:hover {
+    opacity: 1;
+}
+
+
+/* Flash Type Specific Styling - now targeting .flash.TYPE */
+.flash.success .toast-header {
+    background-color: var(--waymark-success);
+    color: var(--waymark-light);
+    border-bottom-color: var(--waymark-success);
+}
+
+.flash.success .toast-body {
+    background-color: rgba(39, 174, 96, 0.1); /* Light tint of success color */
+    color: var(--waymark-dark);
+}
+
+.flash.success .toast-close-btn,
+.flash.success .toast-header small {
+    color: var(--waymark-light); /* Light text on dark header */
+    opacity: 0.8;
+}
+
+.flash.danger .toast-header,
+.flash.error .toast-header { /* Nette often uses 'error' for danger */
+    background-color: var(--waymark-danger);
+    color: var(--waymark-light);
+    border-bottom-color: var(--waymark-danger);
+}
+
+.flash.danger .toast-body,
+.flash.error .toast-body {
+    background-color: rgba(231, 76, 60, 0.1); /* Light tint of danger color */
+    color: var(--waymark-dark);
+}
+
+.flash.danger .toast-close-btn,
+.flash.error .toast-close-btn,
+.flash.danger .toast-header small,
+.flash.error .toast-header small {
+    color: var(--waymark-light);
+    opacity: 0.8;
+}
+
+.flash.warning .toast-header {
+    background-color: var(--waymark-warning);
+    color: var(--waymark-dark); /* Keep dark text on warning header for contrast */
+    border-bottom-color: var(--waymark-warning);
+}
+
+.flash.warning .toast-body {
+    background-color: rgba(243, 156, 18, 0.1); /* Light tint of warning color */
+    color: var(--waymark-dark);
+}
+
+.flash.warning .toast-close-btn,
+.flash.warning .toast-header small {
+    color: var(--waymark-dark);
+    opacity: 0.8;
+}
+
+
+.flash.info .toast-header {
+    background-color: var(--waymark-info);
+    color: var(--waymark-light);
+    border-bottom-color: var(--waymark-info);
+}
+
+.flash.info .toast-body {
+    background-color: rgba(52, 152, 219, 0.1); /* Light tint of info color */
+    color: var(--waymark-dark);
+}
+
+.flash.info .toast-close-btn,
+.flash.info .toast-header small {
+    color: var(--waymark-light);
+    opacity: 0.8;
+}
