@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0abd2268eae4725f53379ec94f8f1f54",
+    "content-hash": "fcb7bd2b7849197958d238264a7ebd08",
     "packages": [
         {
             "name": "contributte/console",
@@ -78,6 +78,80 @@
             "time": "2024-01-04T20:10:58+00:00"
         },
         {
+            "name": "dibi/dibi",
+            "version": "v5.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dg/dibi.git",
+                "reference": "32b6976209859f61eb79380c5a8904ea33db47df"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dg/dibi/zipball/32b6976209859f61eb79380c5a8904ea33db47df",
+                "reference": "32b6976209859f61eb79380c5a8904ea33db47df",
+                "shasum": ""
+            },
+            "require": {
+                "php": "8.2 - 8.5"
+            },
+            "replace": {
+                "dg/dibi": "*"
+            },
+            "require-dev": {
+                "jetbrains/phpstorm-attributes": "^1.0",
+                "nette/di": "^3.1",
+                "nette/tester": "^2.5",
+                "phpstan/phpstan-nette": "^2.0@stable",
+                "tracy/tracy": "^2.9"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Dibi\\": "src/Dibi"
+                },
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause",
+                "GPL-2.0-only",
+                "GPL-3.0-only"
+            ],
+            "authors": [
+                {
+                    "name": "David Grudl",
+                    "homepage": "https://davidgrudl.com"
+                }
+            ],
+            "description": "Dibi is Database Abstraction Library for PHP",
+            "homepage": "https://dibiphp.com",
+            "keywords": [
+                "access",
+                "database",
+                "dbal",
+                "mssql",
+                "mysql",
+                "odbc",
+                "oracle",
+                "pdo",
+                "postgresql",
+                "sqlite",
+                "sqlsrv"
+            ],
+            "support": {
+                "issues": "https://github.com/dg/dibi/issues",
+                "source": "https://github.com/dg/dibi/tree/v5.1.0"
+            },
+            "time": "2025-08-06T22:26:19+00:00"
+        },
+        {
             "name": "graham-campbell/result-type",
             "version": "v1.1.3",
             "source": {
@@ -138,6 +212,56 @@
                 }
             ],
             "time": "2024-07-20T21:45:45+00:00"
+        },
+        {
+            "name": "inlm/mappers",
+            "version": "v3.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/inlm/mappers.git",
+                "reference": "a4bc40fce1ba9a7dbe963c9637f41449541c6ceb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/inlm/mappers/zipball/a4bc40fce1ba9a7dbe963c9637f41449541c6ceb",
+                "reference": "a4bc40fce1ba9a7dbe963c9637f41449541c6ceb",
+                "shasum": ""
+            },
+            "require": {
+                "php": "8.0 - 8.4",
+                "tharos/leanmapper": "^4.0"
+            },
+            "require-dev": {
+                "nette/tester": "^2.5"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Jan Pecha",
+                    "homepage": "https://www.janpecha.cz/"
+                }
+            ],
+            "description": "Mappers for Lean Mapper.",
+            "support": {
+                "issues": "https://github.com/inlm/mappers/issues",
+                "source": "https://github.com/inlm/mappers/tree/v3.1.0"
+            },
+            "funding": [
+                {
+                    "url": "https://www.janpecha.cz/donate/",
+                    "type": "other"
+                }
+            ],
+            "time": "2025-06-27T13:01:15+00:00"
         },
         {
             "name": "latte/latte",
@@ -2494,6 +2618,70 @@
                 }
             ],
             "time": "2025-07-10T08:47:49+00:00"
+        },
+        {
+            "name": "tharos/leanmapper",
+            "version": "v4.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Tharos/LeanMapper.git",
+                "reference": "31bc137241898f8120aea9f983b2a7533706d7bc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Tharos/LeanMapper/zipball/31bc137241898f8120aea9f983b2a7533706d7bc",
+                "reference": "31bc137241898f8120aea9f983b2a7533706d7bc",
+                "shasum": ""
+            },
+            "require": {
+                "dibi/dibi": "^4.0 || ^5.0",
+                "php": "7.4 - 8.4"
+            },
+            "require-dev": {
+                "nette/bootstrap": "^2.4 || ^3.0",
+                "nette/caching": "^2.4 || ^3.0",
+                "nette/di": "^2.4 || ^3.0",
+                "nette/robot-loader": "^2.4 || ^3.0 || ^4.0",
+                "nette/tester": "^2.3",
+                "phpstan/phpstan": "^1.10",
+                "tracy/tracy": "^2.4 || ^3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-develop": "4.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "LeanMapper": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Vojtěch Kohout",
+                    "role": "Author"
+                },
+                {
+                    "name": "Miroslav Paulík",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Jan Pecha",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Tiny ORM based on powerful Dibi database abstraction library for PHP.",
+            "homepage": "http://www.leanmapper.com",
+            "support": {
+                "issues": "https://github.com/Tharos/LeanMapper/issues",
+                "source": "https://github.com/Tharos/LeanMapper/tree/v4.2.1"
+            },
+            "time": "2025-02-21T21:41:19+00:00"
         },
         {
             "name": "tracy/tracy",

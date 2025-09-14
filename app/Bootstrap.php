@@ -20,6 +20,11 @@ class Bootstrap {
 		$this->configurator->setTempDirectory($this->rootDir . '/temp');
 	}
 
+	public function env(string $varName, mixed $defaultValue = null): mixed {
+		$value = getenv($varName);
+		return $value === false ? $defaultValue : $value;
+	}
+
 
 	public function bootWebApplication(): Nette\DI\Container {
 		$this->loadEnvironment();
@@ -43,7 +48,7 @@ class Bootstrap {
 		//$this->configurator->setDebugMode('secret@23.75.345.200'); // enable for your remote IP
 		$this->configurator->enableTracy($this->rootDir . '/log');
 
-		
+
 		$this->configurator->setDebugMode(true);
 	}
 

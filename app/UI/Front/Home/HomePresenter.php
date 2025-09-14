@@ -6,7 +6,7 @@ namespace WaymarkTo\UI\Front\Home;
 
 use Nette;
 use WaymarkTo\Model\DTO\Signpost;
-use WaymarkTo\Model\Repository\SignpostRepository;
+use WaymarkTo\Model\Signpost\SignpostRepository;
 
 
 final class HomePresenter extends Nette\Application\UI\Presenter {

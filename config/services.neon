@@ -1,6 +1,8 @@
 services:
 	- WaymarkTo\Core\RouterFactory::createRouter
 
+    mapper:
+        create: Inlm\Mappers\UnderScoreMapper('WaymarkTo\Model')
 
 search:
 	-	in: %appDir%

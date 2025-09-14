@@ -37,9 +37,19 @@ di:
 extensions:
     console: Contributte\Console\DI\ConsoleExtension(%consoleMode%)
     migrations: Nextras\Migrations\Bridges\NetteDI\MigrationsExtension
+    dibi: Dibi\Bridges\Nette\DibiExtension22
+    leanmapper: LeanMapper\Bridges\Nette\DI\LeanMapperExtension
 
 migrations:
     dir: %appDir%/../migrations # migrations base directory
     driver: pgsql               # pgsql or mysql
     dbal: nette               # nextras, nette, doctrine or dibi
     withDummyData: %debugMode%
+
+leanmapper:
+    driver: pgsql
+	host: ::env('DB_HOST', null)
+	username: ::env('DB_USERNAME', null)
+	password: ::env('DB_PASSWORD', null)
+	database: ::env('DB_NAME', null)
+	lazy: ::env('DB_LAZY', true)

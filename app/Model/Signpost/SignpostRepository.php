@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace WaymarkTo\Model\Repository;
+namespace WaymarkTo\Model\Signpost;
 
-use Nette;
+use WaymarkTo\Model\Repository;
 use WaymarkTo\Model\DTO\Signpost;
 
-class SignpostRepository extends BaseRepository {
+class SignpostRepository extends Repository {
 	public const TABLE_NAME = 'signpost';
 
 	/**
