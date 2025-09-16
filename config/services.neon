@@ -1,13 +1,12 @@
 services:
-	- WaymarkTo\Core\RouterFactory::createRouter
-
+    - WaymarkTo\Core\RouterFactory::createRouter
     mapper:
         create: Inlm\Mappers\UnderScoreMapper('WaymarkTo\Model')
 
 search:
-	-	in: %appDir%
-		classes:
-			- *Facade
-			- *Factory
-			- *Repository
-			- *Service
+    - in: %appDir%
+      classes:
+          - *Facade
+          - *Factory
+          - *Repository
+          - *Service

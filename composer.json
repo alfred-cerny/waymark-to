@@ -1,7 +1,8 @@
 {
 	"autoload": {
 		"psr-4": {
-			"WaymarkTo\\": "app"
+			"WaymarkTo\\": "app",
+			"WaymarkToTesting\\": "tests\\integration"
 		}
 	},
 	"config": {
@@ -54,7 +55,7 @@
 	},
 	"scripts": {
 		"phpstan": "phpstan analyse",
-		"tester": "tester tests -s"
+		"tester": "tester tests -s -c tests/integration/php.ini"
 	},
 	"type": "project"
 }

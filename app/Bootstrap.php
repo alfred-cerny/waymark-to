@@ -55,13 +55,12 @@ class Bootstrap {
 
 	private function setupContainer(): void {
 		$this->configurator->addStaticParameters([
-			'db' => [
-				'host' => getenv('DB_HOST') ?: 'localhost',
-				'port' => getenv('DB_PORT') ?: '3306',
-				'name' => getenv('DB_NAME') ?: 'app_db',
-				'user' => getenv('DB_USER') ?: 'root',
-				'pass' => getenv('DB_PASS') ?: '',
-			]
+			'DB_HOST' => getenv('DB_HOST') ?: 'localhost',
+			'DB_PORT' => getenv('DB_PORT') ?: '3306',
+			'DB_NAME' => getenv('DB_NAME') ?: 'app_db',
+			'DB_USERNAME' => getenv('DB_USERNAME') ?: 'root',
+			'DB_PASSWORD' => getenv('DB_PASSWORD') ?: '',
+			'DB_LAZY' => getenv('DB_LAZY') ?: true,
 		]);
 
 		$configDir = $this->rootDir . '/config';

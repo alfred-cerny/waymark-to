@@ -11,9 +11,9 @@ application:
 
 
 database:
-	dsn: "pgsql:host=%db.host%;port=%db.port%;dbname=%db.name%"
-	user: %db.user%
-	password: %db.pass%
+	dsn: "pgsql:host=%DB_HOST%;port=%DB_PORT%;dbname=%DB_NAME%"
+	user: %DB_USERNAME%
+	password: %DB_PASSWORD%
 
 latte:
 	strictTypes: yes
@@ -37,7 +37,6 @@ di:
 extensions:
     console: Contributte\Console\DI\ConsoleExtension(%consoleMode%)
     migrations: Nextras\Migrations\Bridges\NetteDI\MigrationsExtension
-    dibi: Dibi\Bridges\Nette\DibiExtension22
     leanmapper: LeanMapper\Bridges\Nette\DI\LeanMapperExtension
 
 migrations:
@@ -47,9 +46,10 @@ migrations:
     withDummyData: %debugMode%
 
 leanmapper:
-    driver: pgsql
-	host: ::env('DB_HOST', null)
-	username: ::env('DB_USERNAME', null)
-	password: ::env('DB_PASSWORD', null)
-	database: ::env('DB_NAME', null)
-	lazy: ::env('DB_LAZY', true)
+    db:
+      driver: pgsql
+      host: %DB_HOST%
+      username: %DB_USERNAME%
+      password: %DB_PASSWORD%
+      database: %DB_NAME%
+      lazy: %DB_LAZY%
