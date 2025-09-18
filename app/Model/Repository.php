@@ -6,28 +6,35 @@ namespace WaymarkTo\Model;
 
 use Nette;
 
-abstract class Repository {
-	public const TABLE_NAME = null;
-
-	public function __construct(
-		protected Nette\Database\Explorer $database,
-	) {}
-
-
-	public function findOne(array $conditions): ?Nette\Database\Row {
-		return $this->find($conditions, 1);
+abstract class Repository extends \LeanMapper\Repository {
+	
+	public function persist(Entity|\LeanMapper\Entity $entity): void {
+		parent::persist($entity);
+		$entity->setAsNotNew();
 	}
 
-	public function find(array $conditions, int $limit = 10): ?Nette\Database\Row {
+	public function findOne(array $conditions): ?Entity {
+		$entities = $this->find($conditions, 1);
+		return count($entities) > 0 ? $entities[0] : null;
+	}
+
+	public function find(array $conditions, int $limit = 10): array {
 		$values = [];
 		$whereClause = $this->buildWhereClause($conditions, $values);
 
-		$result = $this->database->query(
-			'SELECT * FROM ' . static::TABLE_NAME . " WHERE $whereClause LIMIT $limit",
-			...$values
-		);
+		$rows = $this->connection
+			->select('*')
+			->from($this->getTable())
+			->where($whereClause, $values)
+			->limit($limit)
+			->fetchAll();
 
-		return $result->fetch();
+		$entities = [];
+		foreach ($rows as $row) {
+			$entities[] = $this->createEntity($row);
+		}
+
+		return $entities;
 	}
 
 	/**

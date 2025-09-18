@@ -47,7 +47,7 @@ migrations:
 
 leanmapper:
     db:
-      driver: pgsql
+      driver: postgre
       host: %DB_HOST%
       username: %DB_USERNAME%
       password: %DB_PASSWORD%

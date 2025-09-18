@@ -1,7 +1,8 @@
 services:
     - WaymarkTo\Core\RouterFactory::createRouter
-    mapper:
+    leanmapper.mapper:
         create: Inlm\Mappers\UnderScoreMapper('WaymarkTo\Model')
+    - WaymarkTo\Model\Signpost\SignpostRepository
 
 search:
     - in: %appDir%

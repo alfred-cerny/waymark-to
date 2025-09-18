@@ -55,7 +55,7 @@
 	},
 	"scripts": {
 		"phpstan": "phpstan analyse",
-		"tester": "tester tests -s -c tests/integration/php.ini"
-	},
+		"tester": "tester tests -s -c tests/integration/php.ini",
+		        "test:integration": "docker compose -f docker-compose.test.yml up -d; composer tester; EXIT_CODE=$?; docker compose -f docker-compose.test.yml down; exit $EXIT_CODE"	},
 	"type": "project"
 }
