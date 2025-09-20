@@ -11,6 +11,6 @@ if (in_array('rebuild', $argv)) {
 }
 
 passthru('docker ps');
-passthru("docker exec -i $appContainerName bash -c 'php bin/console migrations:continue'");
-passthru("docker exec -i $appContainerName bash -c 'composer tester tests'");
+passthru("docker exec -i $appContainerName bash -c 'php bin/console migrations:reset'");
+passthru("docker exec -i $appContainerName bash -c 'composer tester'");
 exec('docker compose down -v');

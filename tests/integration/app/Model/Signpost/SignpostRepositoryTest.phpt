@@ -9,6 +9,7 @@ require __DIR__ . '/../../../Bootstrap.php';
 use Tester\Assert;
 use WaymarkToTesting\TestContainer;
 
+/** @testCase */
 class SignpostRepositoryTest extends \Tester\TestCase {
     public function getRepository() {
         $container = TestContainer::getContainer();
