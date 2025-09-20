@@ -12,7 +12,7 @@ use WaymarkToTesting\TestContainer;
 class SignpostRepositoryTest extends \Tester\TestCase {
     public function getRepository() {
         $container = TestContainer::getContainer();
-        return $container->getByType(\WaymarkTo\Model\Signpost\SignpostRepository::class);
+        return $container->getByType(\WaymarkTo\Model\SignpostRepository::class);
     }
 
     public function testAvailability() {
@@ -21,6 +21,8 @@ class SignpostRepositoryTest extends \Tester\TestCase {
 
     public function testPersistence() {
         $signpost = new \WaymarkTo\Model\Signpost();
+        $signpost->originalUrl = 'https://example.com';
+
         Assert::true($signpost->isNew());
         $repository = $this->getRepository();
 

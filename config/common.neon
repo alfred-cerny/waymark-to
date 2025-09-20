@@ -51,5 +51,6 @@ leanmapper:
       host: %DB_HOST%
       username: %DB_USERNAME%
       password: %DB_PASSWORD%
-      database: %DB_NAME%
+      dbname: %DB_NAME%
+      port: %DB_PORT%
       lazy: %DB_LAZY%

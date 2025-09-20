@@ -5,10 +5,15 @@ declare(strict_types=1);
 namespace WaymarkTo\Model;
 
 use Nette;
+use Ulid\Ulid;
 
 abstract class Repository extends \LeanMapper\Repository {
-	
+
 	public function persist(Entity|\LeanMapper\Entity $entity): void {
+		if ($entity->isNew()) {
+			$entity->id = (new Ulid())->generate();
+		}
+
 		parent::persist($entity);
 		$entity->setAsNotNew();
 	}

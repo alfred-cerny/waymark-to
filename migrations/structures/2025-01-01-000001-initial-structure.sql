@@ -1,14 +1,14 @@
 -- Table: signpost
 CREATE TABLE IF NOT EXISTS signpost
 (
-    id           CHAR(26) PRIMARY KEY,        -- ULID is 26 characters, automatically indexed by PRIMARY KEY
-    short_code   VARCHAR(10) NOT NULL UNIQUE, -- UNIQUE constraint creates an implicit unique index (no need for idx_signposts_short_code)
-    original_url TEXT        NOT NULL UNIQUE, -- UNIQUE constraint creates an implicit unique index
-    is_active    BOOLEAN   DEFAULT TRUE,      -- Index on boolean columns is often less effective, depending on data distribution and query patterns. Removed for optimization.
-    expires_at   TIMESTAMP   NULL,
+    id           CHAR(26) PRIMARY KEY,         -- ULID is 26 characters, automatically indexed by PRIMARY KEY
+    alias        VARCHAR(256) NOT NULL UNIQUE, -- UNIQUE constraint creates an implicit unique index (no need for idx_signposts_short_code)
+    original_url TEXT         NOT NULL UNIQUE, -- UNIQUE constraint creates an implicit unique index
+    is_active    BOOLEAN   DEFAULT TRUE,       -- Index on boolean columns is often less effective, depending on data distribution and query patterns. Removed for optimization.
+    expires_at   TIMESTAMP    NULL,
     created_at   TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at   TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    deleted      BOOLEAN   DEFAULT FALSE      -- Index on boolean columns is often less effective. Removed for optimization.
+    deleted      BOOLEAN   DEFAULT FALSE       -- Index on boolean columns is often less effective. Removed for optimization.
 );
 
 -- Indexes for signpost table

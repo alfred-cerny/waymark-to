@@ -35,10 +35,10 @@ final class Bootstrap {
 		$this->configurator->addStaticParameters([
 			'DB_HOST' => getenv('DB_HOST') ?: 'localhost',
 			'DB_PORT' => getenv('DB_PORT') ?: '6543',
-			'DB_NAME' => getenv('DB_NAME') ?: 'db_name',
+			'DB_NAME' => getenv('DB_NAME') ?: 'testing',
 			'DB_USERNAME' => getenv('DB_USERNAME') ?: 'user',
 			'DB_PASSWORD' => getenv('DB_PASSWORD') ?: 'password',
-			'DB_LAZY' => getenv('DB_LAZY') ?: true,
+			'DB_LAZY' => (bool)(getenv('DB_LAZY') ?: true),
 		]);
 
 		$configDir = $this->rootDir . '/config';

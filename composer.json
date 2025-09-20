@@ -1,8 +1,8 @@
 {
 	"autoload": {
 		"psr-4": {
-			"WaymarkTo\\": "app",
-			"WaymarkToTesting\\": "tests\\integration"
+			"WaymarkToTesting\\": "tests\\integration",
+			"WaymarkTo\\": "app"
 		}
 	},
 	"config": {
@@ -26,6 +26,8 @@
 	"name": "nette/web-project",
 	"require": {
 		"contributte/console": "^0.10.1",
+		"dibi/dibi": "^5.1",
+		"inlm/mappers": "^3.1",
 		"latte/latte": "^3.0",
 		"nette/application": "^3.2.3",
 		"nette/assets": "^1.0",
@@ -40,13 +42,11 @@
 		"nette/security": "^3.2",
 		"nette/utils": "^4.0",
 		"nextras/migrations": "^3.4",
-		"php": ">= 8.2",
-		"tracy/tracy": "^2.10",
-		"vlucas/phpdotenv": "^5.6",
 		"not-empty/ulid-php-lib": "^7.0",
+		"php": ">= 8.4",
 		"tharos/leanmapper": "^4.2",
-		"dibi/dibi": "^5.1",
-		"inlm/mappers": "^3.1"
+		"tracy/tracy": "^2.10",
+		"vlucas/phpdotenv": "^5.6"
 	},
 	"require-dev": {
 		"nette/tester": "^2.5",
@@ -55,7 +55,7 @@
 	},
 	"scripts": {
 		"phpstan": "phpstan analyse",
-		"tester": "tester tests -s -c tests/integration/php.ini",
-		        "test:integration": "docker compose -f docker-compose.test.yml up -d; composer tester; EXIT_CODE=$?; docker compose -f docker-compose.test.yml down; exit $EXIT_CODE"	},
+		"tester": "tester tests -s -c tests/integration/php.ini"
+	},
 	"type": "project"
 }
